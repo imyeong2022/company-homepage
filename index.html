@@ -23,6 +23,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -33,7 +34,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=388b7c0875e40b5eff27c38558be09df"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -225,7 +226,7 @@
                 유진소프트의 다양한 고객 지원 서비스를 통해
                 궁금증을 해결해보세요.</p><br>
 
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form >
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="회사/이름/연락처" required>
                 </div>
@@ -245,7 +246,7 @@
                   <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
 
-                <div class="text-center"><button type="submit" title="Send Message">문의하기</button></div>
+                <div class="text-center"><button type="button" id="btn-send-email" title="Send Message">문의하기</button></div>
               </form>
 
             </div>

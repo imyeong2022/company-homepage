@@ -284,3 +284,36 @@
   new PureCounter();
 
 })()
+
+document.querySelector("#btn-send-email").addEventListener("click",()=>{
+  sendEmail();
+});
+
+function sendEmail(){
+  let data={
+    name:$("#name").val(),
+    email:$("#email").val(),
+    subject:$("#subject").val(),
+    message:$("#message").val()
+  };
+
+  console.log(data);
+
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "mypace0600@gmail.com",
+    Password: "simon120!",
+    To: "mypace0600@gmail.com",
+    From: data.email,
+    Subject: data.subject + data.name,
+    Body: data.message,
+  })
+    .then(function (message) {
+      alert("mail sent successfully");
+      location.href="/";
+    });
+ 
+}
+
+
+///https://privatenote.tistory.com/172 내용 확인 필요
