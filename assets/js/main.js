@@ -299,20 +299,19 @@ function sendEmail(){
 
   console.log(data);
 
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: "mypace0600@gmail.com",
-    Password: "simon120!",
-    To: "mypace0600@gmail.com",
-    From: data.email,
-    Subject: data.subject + data.name,
-    Body: data.message,
-  })
-    .then(function (message) {
-      alert("mail sent successfully");
+  $.ajax({
+    data : data,
+    url : "https://script.google.com/macros/s/AKfycbxhSmZkrMdV_SRmKFfXe0HvlmkJfufmppywt0bQWii_J8NXzQtDS5b5Y-NfcvV7ARz1/exec",
+    method: 'post',
+    success:(data)=>{
+      alert("메일 발송에 성공했습니다.")
       location.href="/";
-    });
- 
+    },
+    error:(xhr,error)=>{
+      console.log(error);
+    }
+  })
+
 }
 
 
