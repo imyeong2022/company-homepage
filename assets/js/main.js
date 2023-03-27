@@ -284,3 +284,35 @@
   new PureCounter();
 
 })()
+
+document.querySelector("#btn-send-email").addEventListener("click",()=>{
+  sendEmail();
+});
+
+function sendEmail(){
+  let data={
+    name:$("#name").val(),
+    email:$("#email").val(),
+    subject:$("#subject").val(),
+    message:$("#message").val()
+  };
+
+  console.log(data);
+
+  $.ajax({
+    data : data,
+    url : "https://script.google.com/macros/s/AKfycbxhSmZkrMdV_SRmKFfXe0HvlmkJfufmppywt0bQWii_J8NXzQtDS5b5Y-NfcvV7ARz1/exec",
+    method: 'post',
+    success:(data)=>{
+      alert("메일 발송에 성공했습니다.")
+      location.href="/";
+    },
+    error:(xhr,error)=>{
+      console.log(error);
+    }
+  })
+
+}
+
+
+///https://privatenote.tistory.com/172 내용 확인 필요
