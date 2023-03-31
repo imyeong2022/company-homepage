@@ -313,6 +313,3 @@ function sendEmail(){
   })
 
 }
-
-
-///https://privatenote.tistory.com/172 내용 확인 필요
